@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(184, 122, 241);
+        }
+        .main-div{
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            margin-top:10%;
+            /* background-color: rgb(108, 178, 243);
+             width:40%; */
+            /* height:  40vh;  */
+            margin-right:4%;
+            font-weight: 700;
+            font-size: 150%;
+          
+        }
+        p{
+            font-size: 50px;
+            font-weight: 700;
+        }
+        #p1{
+            font-size: 30px;
+          
+        }
+        #btn{
+            padding: 15px;
+            cursor: pointer;
+            width: 110px;
+            border-radius: 5px;
+            
+            box-shadow: 0 0.3rem 0.3rem rgb(0, 0, 0.3);
+        }
+        #btn:hover{
+            background-color: red;
+            color:white;
+        }
+        #btn1{
+            padding: 15px;
+            cursor: pointer;
+            width: 110px;
+            border-radius: 5px;
+            box-shadow: 0 0.3rem 0.3rem rgb(0, 0, 0.3);
+        }
+        #btn1:hover{
+            background-color:red;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-div">
+        <div>
+            <h1 id="p1">COUNT DOWN ⌚</h1>
+            <p>0 </p>
+            <br/>
+            <button id="btn">Start</button>
+            <button id="btn1">Stop</button>
+        </div>
+    </div>
+    <script>
+        const stopNum = document.querySelector('p');
+        const btn = document.querySelector('#btn');
+        const stopInterval = document.querySelector('#btn1');
+            let num=0;
+            let timeRef;
+
+            const showMyNum=()=>{
+                stopNum.innerHTML="loading...."
+               timeRef= setInterval(()=>{
+                    stopNum.innerHTML=`${num}`;
+                    num++;
+
+                },1000)
+            }
+            btn.addEventListener('click',showMyNum);
+            stopInterval.addEventListener('click',()=>{
+                clearInterval(timeRef);
+            })
+    </script>
+    
+</body>
+</html>
